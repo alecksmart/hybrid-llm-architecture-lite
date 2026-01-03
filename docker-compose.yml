@@ -10,10 +10,10 @@ services:
 
     volumes:
       # Application code (read-write – required for npm)
-      - /home/alec/Projects/hybrid-llm-architecture:/app
+      - /path_to/hybrid-llm-architecture:/app
 
       # AWS credentials (read-only)
-      - /home/alec/.aws:/root/.aws:ro
+      - /path_to/.aws:/root/.aws:ro
 
     command: >
       sh -c "
