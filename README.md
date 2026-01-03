@@ -6,6 +6,10 @@ Offline-first hybrid LLM setup that routes requests between:
 
 This repo is designed as a **template/reference implementation**. Treat all user inputs as confidential by default.
 
+## Project status
+
+Pre-beta. Demo purposes only.
+
 ## Key features
 
 - **Hybrid routing**
@@ -85,7 +89,7 @@ Examples:
 
 See:
 - `SECURITY.md` for disclosure/reporting guidance
-- Docs in `docs/` (if present) for operational recommendations
+- Docs in `docs/` for operational recommendations
 
 Minimum recommendations for public use:
 - Keep `PROXY_API_KEY` secret
