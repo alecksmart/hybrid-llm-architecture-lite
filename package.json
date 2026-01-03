@@ -1,6 +1,6 @@
 {
   "name": "hybrid-llm-architecture-lite",
-  "version": "0.01-pre-beta",
+  "version": "0.01-early",
   "devDependencies": {
     "jest": "^30.2.0"
   },
