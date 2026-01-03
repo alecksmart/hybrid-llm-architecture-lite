@@ -43,6 +43,26 @@ Pre-beta. Demo purposes only.
   - response-mode extraction (`MODE=...`)
   - sanitization before any cloud request
 
+## Architecture diagram (high level)
+
+```mermaid
+flowchart TB
+    U["User"] --> W["Open WebUI (UI)"]
+    W -- "OpenAI-compatible API" --> P["Hybrid Proxy (Node.js)"]
+    P -- Policy: offline/cloud allowed, quotas, load --> R["Router (auto-hybrid)"]
+    R -- Local path --> L["Ollama (local-fast)"]
+    L --> M["Local Model (CPU-only)"]
+    R -- Cloud path --> S["Sanitizer + Task Envelope"]
+    S --> B["AWS Bedrock (cloud-deep)"]
+    B --> C["Claude (EU region)"] & I["IAM (invoke-only)"]
+    P --> Q["Cost Controls (daily/monthly limits)"] & X["Response Modes (MODE=EXPLAIN/COMPARE/CHECKLIST/DESIGN)"]
+
+     B:::cloud
+     C:::cloud
+     I:::cloud
+    classDef cloud fill:#eef,stroke:#88a,stroke-width:1px
+```
+
 ## Quick start (development)
 
 ### Prerequisites
