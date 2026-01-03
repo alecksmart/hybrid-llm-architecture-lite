@@ -17,6 +17,6 @@ test("no secrets survive sanitization", () => {
     expect(pattern.test(sanitized)).toBe(false);
   }
 
-  expect(sanitized).toContain("[REDACTED:");
+  expect(sanitized).toContain("[SANITIZED:");
 });
 
