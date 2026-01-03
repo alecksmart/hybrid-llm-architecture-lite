@@ -1,4 +1,6 @@
 {
+  "name": "hybrid-llm-architecture-lite",
+  "version": "",
   "devDependencies": {
     "jest": "^30.2.0"
   },
@@ -11,6 +13,5 @@
     "ajv": "^8.17.1",
     "ajv-formats": "^3.0.1",
     "express": "^5.2.1"
-  },
-  "name": "hybrid-llm-architecture-lite"
+  }
 }
