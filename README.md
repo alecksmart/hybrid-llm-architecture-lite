@@ -1,4 +1,4 @@
-# hybrid-llm-architecture-lite
+# Hybrid LLM Architecture (Lite)
 
 Offline-first hybrid LLM setup that routes requests between:
 - **Local**: Ollama (CPU-only, offline-capable)
