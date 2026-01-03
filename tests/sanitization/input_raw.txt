@@ -1,0 +1,9 @@
+Account: 123456789012
+Email: admin@company.internal
+Key: AKIA_EXAMPLE_NOT_A_KEY
+JWT: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9...
+ARN: arn:aws:iam::123456789012:role/Admin
+-----BEGIN PRIVATE KEY-----
+ABCDEF
+-----END PRIVATE KEY-----
+

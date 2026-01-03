@@ -1,0 +1,16 @@
+{
+  "devDependencies": {
+    "jest": "^30.2.0"
+  },
+  "scripts": {
+    "test": "jest",
+    "start:proxy": "node src/proxy/openaiProxyServer.js"
+  },
+  "dependencies": {
+    "@aws-sdk/client-bedrock-runtime": "^3.958.0",
+    "ajv": "^8.17.1",
+    "ajv-formats": "^3.0.1",
+    "express": "^5.2.1"
+  },
+  "name": "hybrid-llm-architecture-lite"
+}

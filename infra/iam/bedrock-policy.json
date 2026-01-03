@@ -1,0 +1,27 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "AllowInvokeClaudeFoundationModels",
+            "Effect": "Allow",
+            "Action": [
+                "bedrock:InvokeModel",
+                "bedrock:InvokeModelWithResponseStream"
+            ],
+            "Resource": [
+                "arn:aws:bedrock:eu-*::foundation-model/anthropic.claude*"
+            ]
+        },
+        {
+            "Sid": "AllowInvokeClaudeInferenceProfiles",
+            "Effect": "Allow",
+            "Action": [
+                "bedrock:InvokeModel",
+                "bedrock:InvokeModelWithResponseStream"
+            ],
+            "Resource": [
+                "arn:aws:bedrock:eu-*:974145757248:inference-profile/eu.anthropic.claude*"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,175 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "transfer_prompt_version",
+    "web_browsing_enabled",
+    "data_sensitivity",
+    "cloud",
+    "redaction_policy",
+    "task",
+    "context_summary_sanitized",
+    "inputs_sanitized",
+    "output_format_required",
+    "meta",
+    "response_mode"
+  ],
+  "properties": {
+    "transfer_prompt_version": {
+      "type": "string",
+      "const": "v1"
+    },
+    "web_browsing_enabled": {
+      "type": "boolean"
+    },
+    "data_sensitivity": {
+      "type": "string",
+      "const": "EXTREMELY_HIGH"
+    },
+    "cloud": {
+      "type": "object",
+      "required": [
+        "provider",
+        "model_family",
+        "model_id"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "provider": {
+          "type": "string",
+          "const": "aws_bedrock"
+        },
+        "model_family": {
+          "type": "string"
+        },
+        "model_id": {
+          "type": "string"
+        }
+      }
+    },
+    "redaction_policy": {
+      "type": "object",
+      "required": [
+        "mode",
+        "removed_categories",
+        "masking_style"
+      ],
+      "properties": {
+        "mode": {
+          "enum": [
+            "summarize",
+            "mask",
+            "both"
+          ]
+        },
+        "removed_categories": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "string"
+          }
+        },
+        "masking_style": {
+          "type": "string"
+        }
+      }
+    },
+    "task": {
+      "type": "object",
+      "required": [
+        "objective",
+        "deliverable_type",
+        "constraints"
+      ],
+      "properties": {
+        "objective": {
+          "type": "string",
+          "minLength": 10
+        },
+        "deliverable_type": {
+          "type": "string"
+        },
+        "constraints": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "context_summary_sanitized": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "inputs_sanitized": {
+      "type": "object",
+      "required": [
+        "problem_statement"
+      ],
+      "properties": {
+        "problem_statement": {
+          "type": "string"
+        }
+      }
+    },
+    "output_format_required": {
+      "type": "object",
+      "required": [
+        "format",
+        "sections"
+      ],
+      "properties": {
+        "format": {
+          "enum": [
+            "markdown",
+            "json",
+            "yaml"
+          ]
+        },
+        "sections": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "meta": {
+      "type": "object",
+      "required": [
+        "request_id",
+        "time_utc"
+      ],
+      "properties": {
+        "request_id": {
+          "type": "string"
+        },
+        "time_utc": {
+          "type": "string",
+          "format": "date-time"
+        }
+      }
+    },
+    "response_mode": {
+      "type": "object",
+      "required": [
+        "mode"
+      ],
+      "additionalProperties": false,
+      "properties": {
+        "mode": {
+          "type": "string",
+          "enum": [
+            "MODE=EXPLAIN",
+            "MODE=COMPARE",
+            "MODE=DESIGN",
+            "MODE=CHECKLIST"
+          ]
+        }
+      }
+    }
+  }
+}
